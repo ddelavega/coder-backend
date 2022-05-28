@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <style>
+      thead td,tbody td{
+        max-width: 100px;
+        min-width: 100px;
+        padding: 1px;
+        margin: 0;
+      }
+
+      .btn{
+        margin: 0;
+      }
+      #horarios {
+      border-collapse:separate;
+      border-spacing: .25rem;
+      border: 0px solid transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="horarios" class="table table-striped col-xs-12 mx-0 px-0 my-2 text-center">
+      <thead>
+        <tr class="clr-blk">
+          <th colspan="2" scope="row">D&iacute;a</th>
+          <th colspan="2"><span>Lun</span></th>
+          <th colspan="2"><span>Mar</span></th>
+          <th colspan="2"><span>Mi&eacute;</span></th>
+          <th colspan="2"><span>Jue</span></th>
+          <th colspan="2"><span>Vie</span></th>
+          <th colspan="2"><span>Sáb</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="clr-lblk">
+          <th colspan="2" scope="row">8:00-9:00</th>
+          <td colspan="2" class="align-middle bg-danger rounded">
+            <span class="btn btn-danger">x</span>
+          </td>
+          <td colspan="2">&nbsp;</td>
+          <td colspan="2" class="align-middle bg-danger rounded">
+            <span class="btn btn-danger">x</span>
+          </td>
+          <td colspan="2">&nbsp;</td>
+          <td colspan="2" class="align-middle bg-danger rounded">
+            <span class="btn btn-light">x</span>
+          </td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr class="clr-lblk">
+          <th colspan="2" scope="row">12:00-13:00</th>
+          <td colspan="2">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+          <td colspan="2" class="align-middle bg-warning rounded">
+            <span class="btn btn-warning">x</span>
+          </td>
+        </tr>
+        <tr class="clr-blk">
+          <th colspan="2" scope="row">13:00-14:30</th>
+          <td class="align-middle bg-warning rounded">
+            <span class="btn btn-warning">x</span>
+          </td>
+          <td class="align-middle bg-secondary rounded">
+            <span class="btn btn-light">x</span>
+          </td>
+          <td class="align-middle bg-warning rounded">
+            <span class="btn btn-warning">x</span>
+          </td>
+          <td class="align-middle bg-secondary rounded">
+            <span class="btn btn-secondary">x</span>
+          </td>
+          <td class="align-middle bg-warning rounded">
+            <span class="btn btn-warning">x</span>
+          </td>
+          <td class="align-middle bg-secondary rounded">
+            <span class="btn btn-secondary">x</span>
+          </td>
+          <td class="align-middle bg-warning rounded">
+            <span class="btn btn-warning">x</span>
+          </td>
+          <td class="align-middle bg-secondary rounded">
+            <span class="btn btn-secondary">x</span>
+          </td>
+          <td class="align-middle bg-warning rounded">
+            <span class="btn btn-warning">x</span>
+          </td>
+          <td class="align-middle bg-secondary rounded">
+            <span class="btn btn-light">x</span>
+          </td>
+          <td colspan="2" class="align-middle bg-secondary rounded">
+            <span class="btn btn-secondary">x</span>
+          </td>
+        </tr>
+          <tr class="clr-lblk">
+            <th colspan="2" scope="row">17:30-18:30</th>
+            <td colspan="2" class="align-middle bg-success rounded">
+              <span class="btn btn-success">x</span>
+            </td>
+            <td colspan="2">&nbsp;</td>
+            <td colspan="2" class="align-middle bg-success rounded">
+              <span class="btn btn-success">x</span>
+            </td>
+            <td colspan="2">&nbsp;</td>
+            <td colspan="2" class="align-middle bg-success rounded">
+              <span class="btn btn-success">x</span>
+            </td>
+            <td colspan="2">&nbsp;</td>
+          </tr>
+          <tr class="clr-lblk">
+            <th colspan="2" scope="row">18:30-19:30</th>
+            <td colspan="2" class="align-middle bg-primary rounded">
+              <span class="btn btn-primary">x</span>
+            </td>
+            <td colspan="2">&nbsp;</td>
+            <td colspan="2" class="align-middle bg-primary rounded">
+              <span class="btn btn-primary">x</span>
+            </td>
+            <td colspan="2">&nbsp;</td>
+            <td colspan="2" class="align-middle bg-primary rounded">
+              <span class="btn btn-primary">x</span>
+            </td>
+            <td colspan="2">&nbsp;</td>
+          </tr>
+          <tr class="clr-lblk">
+            <th colspan="2" scope="row">19:30-20:30</th>
+            <td colspan="2" class="align-middle bg-warning rounded">
+              <span class="btn btn-warning">x</span>
+            </td>
+            <td colspan="2">&nbsp;</td>
+            <td colspan="2" class="align-middle bg-warning rounded">
+              <span class="btn btn-warning">x</span>
+            </td>
+            <td colspan="2">&nbsp;</td>
+            <td colspan="2" class="align-middle bg-warning rounded">
+              <span class="btn btn-warning">x</span>
+            </td>
+            <td colspan="2">&nbsp;</td>
+          </tr>
+          <tr class="clr-lblk">
+            <th colspan="2" scope="row">20:00</th>
+            <td colspan="2">&nbsp;</td>
+            <td colspan="2" rowspan="2" class="align-middle bg-danger rounded">
+              <span class="btn btn-light">x</span>
+            </td>
+            <td colspan="2">&nbsp;</td>
+            <td colspan="2" rowspan="2" class="align-middle bg-danger rounded">
+              <span class="btn btn-light">x</span>
+            </td>
+            <td colspan="2">&nbsp;</td>
+            <td colspan="2">&nbsp;</td>
+          </tr>
+          <tr class="clr-lblk">
+            <th colspan="2" scope="row">20:30</th>
+            <td colspan="2" rowspan="3" class="align-middle bg-secondary rounded">
+              <span class="btn btn-secondary">x</span>
+            </td>
+            <td colspan="2" rowspan="3" class="align-middle bg-secondary rounded">
+              <span class="btn btn-secondary">x</span>
+            </td>
+            <td colspan="2" rowspan="3" class="align-middle bg-secondary rounded">
+              <span class="btn btn-light">x</span>
+            </td>
+            <td colspan="2">&nbsp;</td>
+          </tr>
+          <tr class="clr-blk">
+            <th colspan="2" scope="row">21:00</th>
+            
+            <td colspan="2" rowspan="2" class="align-middle bg-secondary rounded">
+              <span class="btn btn-light">x</span>
+            </td>
+            <td colspan="2" rowspan="2" class="align-middle bg-secondary rounded">
+              <span class="btn btn-secondary">x</span>
+            </td>
+            
+            <td colspan="2">&nbsp;</td>
+          </tr>
+          <tr class="clr-blk">
+            <th colspan="2" scope="row">22:00</th>
+            
+            <td colspan="2">&nbsp;</td>
+            
+          </tr>
+          <tr class="clr-lblk">
+            <th colspan="14">
+              <span class="btn btn-success">Infantiles (5 a 8 años)</span>
+              <span class="btn btn-primary">Juveniles (9 a 13 años)</span>
+              <span class="btn btn-warning">Principiantes - Módulo 1</span>
+              <span class="btn btn-danger">Intermedio - Módulo 2</span>
+              <span class="btn btn-secondary">Avanzados</span>
+              <br>
+                <span class="btn btn-light">No Gi (Sin Kimono)</span>
+              </th>
+            </tr>
+           
+        </tr>
+      </tbody>
+    </table>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+<!-- <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diego de la Vega | Entrega 1</title>
+  </head>
+  <body>
+    <h1>Diego de la Vega | Entrega 1 : Clases</h1>
+    <button id="btncounter">Click</button>
+    <p id="result"></p>
+    
+    <script src="index.js"></script>
+  </body>
+</html> -->

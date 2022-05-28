@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Keycron XS",
+    "price": 30,
+    "thumbnail": "http://algo.com",
+    "id": 1
+  },
+  {
+    "title": "Macbook Pro Retina 4",
+    "price": 3000,
+    "thumbnail": "http://algo.com",
+    "id": 2
+  },
+  {
+    "title": "Xiaomi Redmi 11",
+    "price": 1000,
+    "thumbnail": "http://algo.com",
+    "id": 3
+  }
+]
