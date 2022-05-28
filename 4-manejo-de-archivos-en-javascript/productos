@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Hot Wheels",
+    "price": 30,
+    "thumbnail": "http://algo.com",
+    "id": 1
+  },
+  {
+    "title": "Hot Wheels",
+    "price": 30,
+    "thumbnail": "http://algo.com",
+    "id": 2
+  }
+]
