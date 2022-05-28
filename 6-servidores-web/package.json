@@ -1,0 +1,25 @@
+{
+  "name": "6-servidores-web",
+  "version": "1.0.0",
+  "description": "\"Servidores Web proyecto en Glitch\"",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ddelavega/coder-backend.git#3-servidores-web"
+  },
+  "author": "Diego de la Vega",
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ],
+  "private": true,
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1"
+  }
+}
