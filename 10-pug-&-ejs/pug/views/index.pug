@@ -1,0 +1,31 @@
+extends layout.pug
+
+block append rightlist
+  li(class='uk-active')
+    a(href='/') Inicio
+  li
+    a(href='/productos') Productos
+
+block titlesector
+  h2(class='uk-margin-top') #{title} 
+    a(href='/productos', class='uk-button-altern uk-button-warning') ver productos
+block content
+  div(class='uk-card uk-card-default')
+
+    form(action='/api/productos' method='POST' name='products')
+      fieldset(class='uk-fieldset uk-padding-small')
+        label
+          span Title
+          input(class='uk-input', type='text', placeholder='Title', name='title', required)
+          
+        label
+          span Price
+          input(class='uk-input', type='number', placeholder='Price', name='price', required)
+          
+        label
+          span Thumbnail
+          input(class='uk-input', type='text', placeholder='Thumbnail', name='thumbnail', required)
+        
+        button(class='uk-margin-top uk-button-altern', type='submit') Guardar
+          
+
