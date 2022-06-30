@@ -1,0 +1,11 @@
+Prefiero utilizar pug, porque es mas sencillo viniendo de utilizar sass 
+con la sintaxis de sass y no de scss, y como pug antes era jade, y ya había
+utilizado jade, me pareció mas familiar, tiene sus vueltas, pero si tengo que 
+elegir y poner en orden, seria:
+pug - familiar
+hbs - tiene muchas opciones y formas para implementar
+ejs - me pareció muy limitado en cuanto implementación para estilar
+
+Saludos.
+
+Diego
