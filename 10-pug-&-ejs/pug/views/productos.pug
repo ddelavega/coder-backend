@@ -1,0 +1,54 @@
+extends layout.pug
+
+block append rightlist
+  li
+    a(href='/') Inicio
+  li(class='uk-active')
+    a(href='/productos') Productos
+
+
+block titlesector
+  h2(class='uk-margin-top') #{title} 
+    a(href='/', class='uk-button-altern uk-button-warning') +Agregar
+block content
+
+  div(class='uk-overflow-auto')
+    if productos.length
+      table(class='uk-table uk-table-striped')
+        thead
+          tr
+            th
+              span(class='uk-align-left') ID
+            th
+              span(class='uk-align-left') Title
+            th
+              span(class='uk-align-left') Thumbnail
+            th
+              span(class='uk-align-right') Price 
+        tbody
+          each field in productos
+            tr
+              td
+                span(class='uk-align-left') #{field.id}
+              td
+                span(class='uk-align-left') #{field.title}
+              td
+                span(class='uk-align-left') #{field.thumbnail}
+              td
+                span(class='uk-align-right') $
+                  span #{field.price}
+
+  
+      div(class='uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-small uk-grid-match uk-align-center', uk-grid)
+      
+        each field in productos
+          div(class='uk-inline uk-padding-small')
+            div(class='uk-card uk-card-default')
+              div(class='uk-card-media-top')
+                img(src=field.thumbnail, alt=field.title)
+                div(class='uk-card-body')
+                  h3(class='uk-card-title') #{field.title}
+                  p $#{field.price}
+    else
+      p No hay productos
+          

@@ -1,0 +1,30 @@
+{
+  "name": "api-restful",
+  "version": "0.0.1",
+  "description": "\"Express avanzado - Api Restful\"",
+  "main": "server.js",
+  "engines": {
+    "node": "16.x"
+  },
+  "author": "Diego de la Vega",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "hbs": "^4.2.0",
+    "nodemon": "^2.0.18",
+    "pug": "^3.0.2"
+  },
+  "keywords": [
+    "node",
+    "api restful",
+    "express"
+  ],
+  "scripts": {
+    "ejs": "nodemon ejs/src/index.js",
+    "start": "node server.js",
+    "pug": "node server.js"
+  }
+}

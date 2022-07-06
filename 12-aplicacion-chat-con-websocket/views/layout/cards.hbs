@@ -1,0 +1,16 @@
+<div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-small uk-grid-match uk-align-center" uk-grid>
+{{#each productos as |field|}}
+        
+  <div class="uk-inline uk-padding-small">
+    <div class="uk-card uk-card-default">
+      <div class="uk-card-media-top">
+        <img src={{field.thumbnail}}>
+        <div class="uk-card-body">
+          <h3 class="uk-card-title">{{field.title}}</h3>
+          <p>${{field.price}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/each}}
+</div>

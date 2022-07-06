@@ -1,0 +1,17 @@
+<div
+  class="uk-grid-small uk-grid-match uk-align-center" uk-grid
+>
+  <% productos.forEach((field)=> { %>
+  <div class="uk-inline uk-padding-small uk-adjust">
+    <div class="uk-card uk-card-default">
+      <div class="uk-card-media-top">
+        <img src="<%=field.thumbnail %>">
+        <div class="uk-card-body">
+          <h3 class="uk-card-title"><%=field.title %></h3>
+          <p>$<%=field.price %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% } ) %>
+</div>

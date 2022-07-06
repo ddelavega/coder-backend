@@ -1,0 +1,31 @@
+doctype html
+html
+  head 
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='description', content='Some description')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='style.css', type='text/css')
+    link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/css/uikit.min.css', type='text/css')
+    title Pug - #{title}
+
+  body
+
+    block navbar 
+      div(uk-sticky='end: #transparent-sticky-navbar; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky')
+        nav(class='uk-navbar-container' style='position: relative; z-index: 980;')
+          div(class='uk-navbar')
+            div(class='uk-navbar-left')
+              <a class="uk-navbar-item uk-logo" href="/">e-magik | shop</a>
+
+            div(class='uk-navbar-right')
+              ul(class='uk-navbar-nav')
+                block rightlist
+            
+              
+    div(class='main')
+      div(class='uk-container uk-align-center')
+        block titlesector
+          h2 #{title}
+        block content
+    
