@@ -7,7 +7,6 @@
 
 # dependencies
 /node_modules
-node_modules
 
 # profiling files
 chrome-profiler-events*.json
@@ -68,5 +67,6 @@ Thumbs.db
 .vscode/settings.json
 */.vscode/*
 */node_modules
+
 
 yarn.lock
