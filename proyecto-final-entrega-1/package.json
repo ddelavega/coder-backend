@@ -35,7 +35,6 @@
     "express": "^4.15.2",
     "global": "^4.4.0",
     "json-server": "^0.17.0",
-    "mainui": "/Users/diegodelavega/Documents/ProjectsX/ngxignix/dist/mainui",
     "rxjs": "^7.5.5",
     "sass": "^1.50.1",
     "sweetalert2": "^11.4.23",
