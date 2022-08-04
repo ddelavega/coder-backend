@@ -1,0 +1,43 @@
+<div class="uk-overflow-auto" *ngFor="let cartItem of itemsCart; let i = index">
+  <!-- <p *ngFor="let cartItem of itemsCart; let i = index">
+  {{cartItem | json}}
+</p> -->
+<h2 class="uk-margin-top">
+
+  Cart
+  <a class="uk-button-altern uk-button-warning uk-margin-left" (click)="createCart()">+Cart</a>
+  <ng-container *ngIf="itemsCart.length">
+    <a class="uk-button-altern uk-button-warning uk-margin-left" (click)="deleteCart(cartItem.id)">Vaciar Cart</a>
+  </ng-container>
+</h2>
+
+  <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-small uk-grid-match uk-align-center" uk-grid>
+    <ng-container *ngIf="itemsCart.length; else noData">
+      <div class="uk-inline uk-padding-small" *ngFor="let productItem of cartItem.products; let i = index">
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-media-top">
+            <img src={{productItem.thumbnail}}>
+            <div class="uk-card-body">
+              <h3 class="uk-card-title">{{productItem.title}}</h3>
+              <p>ID: {{productItem.id}}</p>
+              <p>Precio: {{productItem.price}}</p>
+              <p>Creado: {{productItem.timestamp}}</p>
+              <p>Stock:{{productItem.stock}}</p>
+              <p>Cantidad: {{productItem.quantity}}</p>
+
+              <button class="uk-button-altern uk-button-danger"
+              ><span uk-icon="icon: trash" (click)="deleteProductFromCart(cartItem.id,productItem)" title="{{cartItem.id}},{{productItem}}"></span></button>
+              <!-- onclick="deleteProduct(${productItem.id})" -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #noData>
+      <p class="uk-margin-top">
+        No existen datos
+      </p>
+    </ng-template>
+  </div>
+</div>

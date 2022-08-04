@@ -1,0 +1,260 @@
+<div class="{{ openOver ? 'forced-fixed' : '' }}">
+  <!-- <div class="uk-container uk-container-large"> -->
+  <!-- <div
+    uk-sticky="start: 300; animation: uk-animation-fade; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light"
+  > -->
+    <nav class="uk-navbar-container">
+      <div class="uk-visible-* uk-hidden@m">
+        <div class="uk-navbar">
+          <div class="uk-navbar-left">
+            <a
+              class="uk-navbar-item uk-logo"
+              routerLinkActiveOptions="{ exact: true }"
+              routerLink="/"
+              >e-magik-Shop</a
+            >
+          </div>
+          <div class="uk-navbar-right">
+            <a class="uk-navbar-toggle" uk-toggle="target: #offcanvas-nav">
+              <span uk-navbar-toggle-icon></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="offcanvas-nav" uk-offcanvas="overlay: true">
+        <div class="uk-offcanvas-bar">
+          <ul class="uk-nav uk-nav-default">
+            <li class="uk-nav-header">Menu</li>
+
+            <li class="uk-parent">
+              <a routerLink="/inicio" routerLinkActive="router-link-active"  uk-toggle="target: #offcanvas-nav"
+                ><span
+                  class="uk-margin-small-right"
+                  uk-icon="icon: thumbnails"
+                ></span>
+                Products</a
+              >
+            </li>
+            <!-- <li class="uk-parent">
+              <a routerLink="/horarios"  uk-toggle="target: #offcanvas-nav">Horarios</a>
+            </li> -->
+
+            <li class="uk-parent">
+              <a routerLink="/cart" routerLinkActive="router-link-active"><span uk-icon="cart"></span>
+                <span *ngIf="cartTotalCount" class="uk-badge">{{cartTotalCount}}</span>
+              </a>
+            </li>
+            <!-- <li class="uk-parent"  uk-toggle="target: #offcanvas-nav">
+              <a>Parent</a>
+              <ul class="uk-nav-sub">
+                <li><a>Sub item</a></li>
+                <li><a>Sub item</a></li>
+              </ul>
+            </li>
+            <li class="uk-nav-header">Header</li>
+            <li>
+              <a  uk-toggle="target: #offcanvas-nav"
+                ><span
+                  class="uk-margin-small-right"
+                  uk-icon="icon: table"
+                ></span>
+                Item</a
+              >
+            </li>
+            <li>
+              <a
+                ><span
+                  class="uk-margin-small-right"
+                  uk-icon="icon: thumbnails"
+                ></span>
+                Item</a
+              >
+            </li>
+            <li class="uk-nav-divider"></li>
+            <li>
+              <a
+                ><span
+                  class="uk-margin-small-right"
+                  uk-icon="icon: trash"
+                ></span>
+                Item</a
+              >
+            </li> -->
+          </ul>
+        </div>
+      </div>
+
+      <div class="uk-hidden-* uk-visible@m">
+        <div class="uk-navbar">
+          <div class="uk-navbar-left">
+            <span
+              class="uk-navbar-item uk-logo"
+              routerLinkActiveOptions="{ exact: true }"
+              routerLink="/"
+              >e-magik-Shop</span
+            >
+          </div>
+          <div class="uk-navbar-right">
+            <ul class="uk-navbar-nav">
+              <li class="uk-parent">
+                <a routerLink="/inicio" routerLinkActive="router-link-active"
+                  >Productos</a
+                >
+              </li>
+              <!-- <li class="uk-parent">
+                <a routerLink="/horarios" routerLinkActive="router-link-active"
+                  >Horarios</a
+                >
+              </li> -->
+
+
+              <li>
+                <a routerLink="/cart" routerLinkActive="router-link-active"><span uk-icon="cart"></span>
+                  <span *ngIf="cartTotalCount" class="uk-badge">{{cartTotalCount}}</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- </div> -->
+    <div class="main">
+      <div class="uk-container uk-align-center">
+    <router-outlet></router-outlet>
+
+    <!-- <div
+      class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex"
+    >
+      <div
+        class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical"
+      >
+        <h1
+          uk-parallax="opacity: 0,1,1; y: -100,0,0; x: 100,100,0; scale: 2,1,1; end: 50vh + 50%;"
+        >
+          Headline
+        </h1>
+        <p
+          uk-parallax="opacity: 0,1,1; y: 100,0,0; x: -100,-100,0; scale: 0.5,1,1; end: 50vh + 50%;"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+    </div>
+    <div
+      class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex"
+    >
+      <div
+        class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical"
+      >
+        <h1
+          uk-parallax="opacity: 0,1,1; y: -100,0,0; x: 100,100,0; scale: 2,1,1; end: 50vh + 50%;"
+        >
+          Headline
+        </h1>
+        <p
+          uk-parallax="opacity: 0,1,1; y: 100,0,0; x: -100,-100,0; scale: 0.5,1,1; end: 50vh + 50%;"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+    </div>
+    <div
+      class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex"
+    >
+      <div
+        class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical"
+      >
+        <h1
+          uk-parallax="opacity: 0,1,1; y: -100,0,0; x: 100,100,0; scale: 2,1,1; end: 50vh + 50%;"
+        >
+          Headline
+        </h1>
+        <p
+          uk-parallax="opacity: 0,1,1; y: 100,0,0; x: -100,-100,0; scale: 0.5,1,1; end: 50vh + 50%;"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+    </div>
+    <div class="uk-section uk-light">
+      <div class="uk-container">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum.
+        </p>
+
+        <p>
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+          officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
+          amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris.
+        </p>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum.
+        </p>
+      </div>
+    </div> -->
+  <!-- </div> -->
+  <!--
+  <ul class="uk-switcher switcher-container uk-margin">
+    <li>Hello! The first item.</li>
+    <li>Hello again! The second item.</li>
+    <li>Bazinga! The third item.</li>
+    <li>Bazinga! The third item.</li>
+    <li>Bazinga! The third item.</li>
+    <li>Bazinga! The third item.</li>
+  </ul>
+
+  <a uk-totop uk-scroll></a>
+  <div uk-lightbox>
+    <a
+      class="uk-button uk-button-default"
+      href="images/photo.jpg"
+      data-caption="Image"
+      >Image</a
+    >
+    <a
+      class="uk-button uk-button-default"
+      href="https://yootheme.com/site/images/media/yootheme-pro.mp4"
+      data-caption="Video"
+      >Video</a
+    >
+    <a
+      class="uk-button uk-button-default"
+      href="https://www.youtube.com/watch?v=c2pz2mlSfXA"
+      data-caption="YouTube"
+      >YouTube</a
+    >
+    <a
+      class="uk-button uk-button-default"
+      href="https://vimeo.com/1084537"
+      data-caption="Vimeo"
+      >Vimeo</a
+    >
+    <a
+      class="uk-button uk-button-default"
+      href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4740.819266853735!2d9.99008871708242!3d53.550454675412404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3f9d24afe84a0263!2sRathaus!5e0!3m2!1sde!2sde!4v1499675200938"
+      data-caption="Google Maps"
+      data-type="iframe"
+      >Google Maps</a
+    >
+  </div>
+-->
+  <!-- </div> -->
+</div>
+</div>
+</div>
