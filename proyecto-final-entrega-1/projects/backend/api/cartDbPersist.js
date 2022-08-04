@@ -57,6 +57,21 @@ class CartDbPersist {
     }
   }
 
+  getProductsByCartId = async (id) => {
+    let carts = await this.getAll();
+    const cartIndex = carts.findIndex((e) => e.id === id);
+    console.log('cartIndex', cartIndex, carts);
+    if (cartIndex === -1) return { error: true };
+    const products = carts[cartIndex].products;
+
+    try {
+      return { error: false, products };
+    }
+    catch (error) {
+      throw new Error(`No se encontró cart con id: ${id}`)
+    }
+  }
+
   updateByCartId = async (id, cartToSend) => {
     // cargar productos segun cart id
     console.log('UPDATE BY ID', 'id', id, 'cartToSend', cartToSend);

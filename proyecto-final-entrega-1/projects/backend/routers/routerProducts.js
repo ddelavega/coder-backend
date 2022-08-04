@@ -56,14 +56,28 @@ routerProducts.get('/api/products', async (req, res) => {
   }
 });
 
-routerProducts.get('/api/products/:id', (req, res) => {
+routerProducts.get('/api/products/:id', async (req, res) => {
   const { id } = req.params;
   res.setHeader('Content-Type', 'text/html');
   res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
-  if (products.find(element => element.id === parseInt(id))) {
-    res.json(products.find(element => element.id === parseInt(id)));
-  } else {
-    res.json({ msj: `No existe el product con ID: ${id}` });
+
+  // if (products.find(element => element.id === id)) {
+  //   res.json(products.find(element => element.id === id));
+  // } else {
+  //   res.json({ msj: `No existe el product con ID: ${id}` });
+  // }
+  const products = await ProductApi.getAll();
+  const productIndex = products.findIndex(p => p.id === id);
+  const product = products[productIndex];
+  try {
+    res.json({
+      status: 200,
+      message: "Get data ok from Product By Id",
+      product
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).send('Server error');
   }
 });
 

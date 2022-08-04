@@ -95,6 +95,25 @@ routerCart.post(`${cartBase}/:id/products`, async (req, res) => {
 });
 
 
+routerCart.get(`${cartBase}/:id/products`, async (req, res) => {
+  const { id } = req.params;
+  console.log('req.body', req.params);
+  const response = await CartApi.getProductsByCartId(id);
+
+  try {
+    console.log('response', response);
+    res.json({
+      status: 200,
+      message: "Get data ok from Cart",
+      response
+    });
+
+  } catch (error) {
+    console.error(error);
+    return res.sendStatus(500).send('Server error');
+  }
+});
+
 
 routerCart.get('/api/cart', async (req, res) => {
   try {
