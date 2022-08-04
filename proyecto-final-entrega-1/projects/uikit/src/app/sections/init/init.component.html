@@ -1,0 +1,150 @@
+
+<h2 class="uk-margin-top">
+  <ng-container *ngIf="step !== 'READ'; else defaultTitle">
+    {{step === 'CREATE' ? 'Add' : 'Edit'}} Product
+    <a class="uk-button-altern uk-button-warning" (click)="backTo('READ')"><span uk-icon="arrow-left"></span></a>
+
+  </ng-container>
+  <ng-template #defaultTitle>
+    Products
+    <a class="uk-button-altern uk-button-warning uk-margin-left" (click)="createAbmItem('Desde lista')">+Agregar</a>
+    <a class="uk-button-altern uk-button-warning uk-margin-left" (click)="createCart()">+Cart</a>
+
+  </ng-template>
+</h2>
+
+<div class="uk-overflow-auto{{step === 'UPDATE' ? '' : ' uk-hidden'}}">
+  <ng-container *ngIf="getItemAbm; else noData">
+    <div class="uk-card uk-card-default">
+      <form (ngSubmit)="editAbmItemForm(getItemAbm)" [formGroup]="itemsAbmForm">
+        <fieldset class="uk-fieldset uk-padding-small">
+          <label for="title">
+            <span>Title</span>
+            <input class="uk-input{{isFieldEditInvalid('title') ? ' uk-error-input': ' uk-normal-input'}}" type="text" formControlName="title" placeholder="Ingrese un titulo" required autocomplete="off"
+            (focus)="error = ''" />
+          </label>
+          <label for="price">
+            <span>Price</span>
+            <input class="uk-input{{isFieldEditInvalid('price') ? ' uk-error-input': ' uk-normal-input'}}" type="number" formControlName="price" placeholder="Ingrese un precio" required autocomplete="off"
+            (focus)="error = ''" />
+          </label>
+          <label for="stock">
+            <span>Stock</span>
+            <input class="uk-input{{isFieldEditInvalid('stock') ? ' uk-error-input': ' uk-normal-input'}}" type="number" formControlName="stock" placeholder="Ingrese un stock" required autocomplete="off"
+            (focus)="error = ''" />
+          </label>
+          <label for="thumbnail">
+            <span>Tumbnail</span>
+            <input class="uk-input{{isFieldEditInvalid('thumbnail') ? ' uk-error-input': ' uk-normal-input'}}" type="text"  formControlName="thumbnail" placeholder="Ingrese una url de imagen" required autocomplete="off"
+            (focus)="error = ''" />
+            <!-- {{isFieldEditInvalid('thumbnail') ? ' uk-error-input': ''}} -->
+          </label>
+            <button type="submit" class="uk-margin uk-button-altern" [disabled]="itemsAbmForm.invalid">Guardar {{loading}}
+
+            </button>
+        </fieldset>
+      </form>
+    </div>
+  </ng-container>
+
+</div>
+<div class="container-lg px-0 py-1 px-2{{step === 'CREATE' ? '' : ' uk-hidden'}}">
+  <h2 class="titulo-detalle font-semi mb-4">
+    Crear Item ABM
+    <a type="button" class="btn btn-outline-warning" (click)="backTo('READ')">
+      <span class="iconb-box"><i class="iconb icob-arrow-left"></i></span> Volver
+    </a>
+  </h2>
+  <div class="uk-card uk-card-default">
+    <form (ngSubmit)="createFormAbm()" [formGroup]="itemCreateAbmForm">
+      <fieldset class="uk-fieldset uk-padding-small">
+        <label for="title">
+          <span>Title</span>
+          <input class="uk-input{{isFieldCreateInvalid('title') ? ' uk-error-input': ' uk-normal-input'}}" type="text" formControlName="title" placeholder="Ingrese un titulo" required autocomplete="off"
+          (focus)="error = ''" />
+        </label>
+        <label for="price">
+          <span>Price</span>
+          <input class="uk-input{{isFieldCreateInvalid('price') ? ' uk-error-input': ' uk-normal-input'}}" type="number" formControlName="price" placeholder="Ingrese un precio" required autocomplete="off"
+          (focus)="error = ''" />
+        </label>
+        <label for="stock">
+          <span>Stock</span>
+          <input class="uk-input{{isFieldCreateInvalid('stock') ? ' uk-error-input': ' uk-normal-input'}}" type="number" formControlName="stock" placeholder="Ingrese un stock" required autocomplete="off"
+          (focus)="error = ''" />
+        </label>
+        <label for="thumbnail">
+          <span>Tumbnail</span>
+          <input class="uk-input{{isFieldCreateInvalid('thumbnail') ? ' uk-error-input': ' uk-normal-input'}}" type="text"  formControlName="thumbnail" placeholder="Ingrese una url de imagen" required autocomplete="off"
+          (focus)="error = ''" />
+        </label>
+        <!-- <div *ngIf="!itemCreateAbmForm.invalid"> -->
+          <button type="submit" class="uk-margin uk-button-altern" [disabled]="itemCreateAbmForm.invalid">Guardar {{loading}}
+          </button>
+        <!-- </div> -->
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+<!-- <p *ngFor="let productItem of itemsFetch['products']; let i = index">
+  {{productItem.title}}
+  {{productItem.id}}
+  <a (click)="deleteProduct(productItem)">delete</a>
+  <a (click)="deleteFetchProduct(productItem['id'])">deleteFrom fetch</a>
+</p> -->
+
+<!-- <div class="container-lg px-0 py-1 px-2{{step === 'READ' ? '' : ' uk-hidden'}}">
+  <h2 class="titulo-detalle font-semi mb-4">
+    Lista Item ABM
+    <a type="button" class="btn btn-outline-warning" (click)="createAbmItem('Desde lista')">
+      <span class="iconb-box"><i class="iconb icob-arrow-left"></i></span> Crear
+    </a>
+  </h2>
+</div> -->
+
+<!-- <div class="container-lg px-0  px-2{{step === 'READ' ? '' : ' uk-hidden'}}">
+
+  <h2 class="titulo-detalle font-semi my-3">
+    Últimos Item ABM adheridos
+  </h2>
+</div> -->
+
+<div class="uk-overflow-auto{{step === 'READ' ? '' : ' uk-hidden'}}">
+
+
+  <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-small uk-grid-match uk-align-center" uk-grid>
+    <ng-container *ngIf="items.length; else noData">
+      <div class="uk-inline uk-padding-small" *ngFor="let productItem of items; let i = index">
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-media-top">
+            <img src={{productItem.thumbnail}}>
+            <div class="uk-card-body">
+              <h3 class="uk-card-title">{{productItem.title}}</h3>
+              <p>ID: {{productItem.id}}</p>
+              <p>Precio: {{productItem.price}}</p>
+              <p>Creado: {{productItem.timestamp}}</p>
+              <p>Stock:{{productItem.stock}}</p>
+              <button class="uk-button-altern{{productItem.stock ? '': ' disabled'}}" (click)="productItem.stock ? addToCart(productItem) : null"
+              ><span uk-icon="icon: plus"></span></button>
+              <!-- onclick="addToCart('${productItem.id}')" -->
+              <button class="uk-button-altern" (click)="editItemAbm(productItem)"
+              ><span uk-icon="icon: pencil"></span></button>
+
+              <!-- onclick="editProduct('${productItem.id}')" -->
+              <button class="uk-button-altern uk-button-danger" (click)="deleteFetchProduct(productItem['id'])"
+              ><span uk-icon="icon: trash"></span></button>
+              <!-- onclick="deleteProduct(${productItem.id})" -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #noData>
+      <p class="uk-margin-top">
+        No existen datos
+      </p>
+    </ng-template>
+  </div>
+</div>
