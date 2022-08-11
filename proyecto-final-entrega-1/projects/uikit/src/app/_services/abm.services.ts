@@ -1,6 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable, timeInterval, first, BehaviorSubject } from 'rxjs';
+import {
+  map,
+  Observable,
+  timeInterval,
+  first,
+  BehaviorSubject,
+  switchMap,
+} from 'rxjs';
 
 interface OrderCount {
   cartTotal: number;
@@ -11,7 +18,8 @@ export class AbmService {
   apiMock = 'https://6239d4e1bbe20c3f66cac67f.mockapi.io/productos/detalle';
   apiMockX = 'http://localhost:8080/api/products';
   apiMockCart = 'http://localhost:8080/api/cart';
-
+  availableProducts;
+  availableProductsFromProducts;
   private currentCounter = new BehaviorSubject<number>(null);
   currentCart = this.currentCounter.asObservable();
 
@@ -65,6 +73,9 @@ export class AbmService {
         this.changeCount(
           data.value.cart.length ? data.value.cart[0].products.length : null
         );
+        this.availableProducts = data.value.cart[0].products;
+        console.log('this.availableProducts map', this.availableProducts);
+
         console.log('GETCARTITEMS2', data.value.cart.length);
 
         // this.setOrderCount({
@@ -81,10 +92,11 @@ export class AbmService {
       timeInterval(),
       map((data) => {
         console.log('Datos', data.value);
+        this.availableProductsFromProducts = data.value;
         console.log('tiempo de demora', this.millisToTime(data.interval));
         console.log('Dato crudo:', data);
         this.getCount();
-        console.log('GETCOUNT');
+        console.log('GETCOUNT from products');
         return data.value;
       })
     );
@@ -130,7 +142,7 @@ export class AbmService {
       price: itemAbm.price,
       stock: itemAbm.stock,
       thumbnail: itemAbm.thumbnail,
-      // timestamp: itemAbm.timestamp,
+      timestamp: itemAbm.timestamp,
     };
 
     return this.http.post<any>(`${this.apiMockX}`, withIditemAbm).pipe(
@@ -190,6 +202,7 @@ export class AbmService {
   // Obsevables RXJS DELETE
   deleteAbmItem(itemAbmId): Observable<any> {
     console.log('El Item es', itemAbmId);
+
     console.log('Se inició en servicio la consulta ITEM ABM Delete');
     return this.http.delete<any>(`${this.apiMockX}/${itemAbmId}`).pipe(
       first(),

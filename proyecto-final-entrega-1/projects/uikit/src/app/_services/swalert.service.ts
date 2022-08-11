@@ -1,8 +1,7 @@
 import { AbmService } from './abm.services';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
-import { first, shareReplay, timeInterval } from 'rxjs/operators';
+import { timeInterval } from 'rxjs/operators';
 import Swal from 'sweetalert2';
 // import Swal from 'sweetalert2/dist/sweetalert2.js';
 
@@ -296,14 +295,15 @@ export class SwalertService {
                   },
                 });
             }
-          } else {
+          }
+          if (!cart) {
             this.abmServices
               .deleteAbmItem(item.id)
               // this.abmServices.deleteAbmItem(item._id) // MONGO
               .pipe(timeInterval())
               .subscribe({
                 next: (data) => {
-                  console.log('Objeto crudo', data.value);
+                  console.log('Objeto crudo on delete', data.value);
                   this.reloadCurrentRoute();
                 },
                 error: (error) => {
