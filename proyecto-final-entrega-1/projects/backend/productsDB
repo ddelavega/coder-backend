@@ -6,5 +6,13 @@
     "id": "1658166515438",
     "timestamp": 1658170571341,
     "stock": 100
+  },
+  {
+    "title": "Placa xMain",
+    "price": 23,
+    "thumbnail": "http://loremflickr.com/640/480/technics",
+    "stock": 100,
+    "id": "1660769709202",
+    "timestamp": 1660769709202
   }
 ]
