@@ -15,6 +15,9 @@
     "styleLint": "npx stylelint projects/initial",
     "server": "http-server"
   },
+  "engines": {
+    "node": "16.x"
+  },
   "server": "backend",
   "private": true,
   "author": "Diego de la Vega",

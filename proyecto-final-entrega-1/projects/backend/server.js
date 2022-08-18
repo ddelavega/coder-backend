@@ -27,19 +27,19 @@ app.use(express.static(__dirname + '/public'));
 app.use('/api/products', routerProducts);
 app.use('/api/cart', routerCart);
 
-app.get('/', async (req, res) => {
-  try {
-    const something = { text: "hola" };
-    res.json({
-      status: 200,
-      message: "Get data ok from something",
-      something
-    });
-  } catch (error) {
-    console.error(error);
-    return res.status(500).send('Server error');
-  }
-});
+// app.get('/', async (req, res) => {
+//   try {
+//     const something = { text: "hola" };
+//     res.json({
+//       status: 200,
+//       message: "Get data ok from something",
+//       something
+//     });
+//   } catch (error) {
+//     console.error(error);
+//     return res.status(500).send('Server error');
+//   }
+// });
 
 const server = app.listen(port, () => {
   console.log(`Listen to port: ${port} en http://localhost:${port}`);
