@@ -1,3 +1,4 @@
+import { baseUrl } from './../../_config/config';
 import { first, timeInterval } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 // import { Router } from '@angular/router';
@@ -14,7 +15,7 @@ export class CartComponent implements OnInit {
   itemsCart = [];
   products;
   cartTotalCount: number;
-  apiMockCart = 'http://localhost:8080/api/cart';
+  // apiMockCart = `${baseUrl}/api/cart`;
 
   // favouriteTotal: number;
   // cartTotal: number;

@@ -20,14 +20,14 @@ app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(__dirname + '/dist'));
+app.use(express.static(__dirname + '/dist/uikit'));
 
 
 // app.use('/api/products', routerProducts);
 // app.use('/api/cart', routerCart);
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname + '/dist)index.html'))
+  res.sendFile(path.join(__dirname + '/dist/uikit/index.html'))
 });
 
 var server = app.listen(port || 3000, function () {

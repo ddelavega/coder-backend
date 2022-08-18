@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable, timeInterval, first, BehaviorSubject } from 'rxjs';
+import { baseUrl } from '../_config/config';
 
 interface OrderCount {
   cartTotal: number;
@@ -9,8 +10,8 @@ interface OrderCount {
 @Injectable({ providedIn: 'root' })
 export class AbmService {
   apiMock = 'https://6239d4e1bbe20c3f66cac67f.mockapi.io/productos/detalle';
-  apiMockX = 'https://vast-garden-79633.herokuapp.com/api/products';
-  apiMockCart = 'https://vast-garden-79633.herokuapp.com/api/cart';
+  apiMockX = `${baseUrl}/api/products`;
+  apiMockCart = `${baseUrl}/api/cart`;
   availableProducts;
   availableProductsFromProducts;
   private currentCounter = new BehaviorSubject<number>(null);

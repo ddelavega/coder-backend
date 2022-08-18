@@ -1,3 +1,4 @@
+import { baseUrl } from './../../_config/config';
 import { Products } from './../../_models/product';
 import { SwalertService } from './../../_services/swalert.service';
 import { first, timeInterval } from 'rxjs';
@@ -21,7 +22,7 @@ export class InitComponent implements OnInit {
   items = [];
   itemsCart = [];
   itemsFetch = [];
-  server = 'http://localhost:8080';
+  server = `${baseUrl}`;
   apiProducts = `${this.server}/api/products`;
 
   step: Steps;
