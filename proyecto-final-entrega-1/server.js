@@ -1,22 +1,22 @@
 var express = require('express');
-var cors = require('cors');
+// var cors = require('cors');
 var path = require('path')
 
 require('dotenv').config();
-var corsExtras = require('./cors');
+// var corsExtras = require('./cors');
 
 var app = express();
 
 var port = process.env.PORT || 8080;
 var portFront = process.env.FRONT_PORT || 4800;
 
-var corsOptions = {
-  origin: 'https://protected-chamber-96722.herokuapp.com/',
-  optionsSuccessStatus: 200
-};
+// var corsOptions = {
+//   origin: 'https://protected-chamber-96722.herokuapp.com/',
+//   optionsSuccessStatus: 200
+// };
 
-app.use(corsExtras.permission)
-app.use(cors(corsOptions));
+// app.use(corsExtras.permission)
+// app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
