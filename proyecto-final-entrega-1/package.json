@@ -2,8 +2,9 @@
   "name": "e-magik-shop",
   "version": "0.2.0",
   "scripts": {
+    "heroku-postbuild": "ng build --prod",
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "config": "ts-node ./setenv.ts",
     "uikit": "npm run config -- --environment=prod && ng serve --project uikit --port 4800 -o",
     "build": "ng build",
