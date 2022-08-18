@@ -20,7 +20,7 @@ app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(__dirname + '/dist/uikit'));
+app.use(express.static(__dirname + '/dist'));
 
 
 // app.use('/api/products', routerProducts);
