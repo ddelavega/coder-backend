@@ -1,0 +1,33 @@
+{
+  "name": "api-restful",
+  "version": "0.0.1",
+  "description": "\"Express avanzado - Api Restful\"",
+  "author": "Diego de la Vega",
+  "license": "MIT",
+  "private": true,
+  "main": "main.js",
+  "keywords": [
+    "node",
+    "api restful",
+    "express"
+  ],
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "hbs": "^4.2.0",
+    "knex": "^2.2.0",
+    "mysql": "^2.18.1",
+    "socket.io": "^4.5.1",
+    "sqlite3": "^5.0.11"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  }
+}
