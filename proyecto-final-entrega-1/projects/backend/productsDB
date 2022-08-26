@@ -8,19 +8,11 @@
     "stock": 100
   },
   {
-    "title": "Pantalla Led",
-    "price": 234,
+    "title": "Placa xMain",
+    "price": 23,
     "thumbnail": "http://loremflickr.com/640/480/technics",
-    "id": "1659565469169",
-    "timestamp": 1659590878275,
-    "stock": 1
-  },
-  {
-    "title": "Noga",
-    "price": 300,
-    "thumbnail": "http://algo.com",
-    "stock": 33,
-    "id": "1659601287655",
-    "timestamp": 1659601287655
+    "stock": 100,
+    "id": "1660769709202",
+    "timestamp": 1660769709202
   }
 ]
