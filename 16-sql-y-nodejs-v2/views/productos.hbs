@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{> head }}
+<body>
+  <div
+    uk-sticky="end: #transparent-sticky-navbar; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky"
+  >
+    <nav class="uk-navbar-container" style="position: relative; z-index: 980">
+      <div class="uk-navbar">
+        <div class="uk-navbar-left">
+          <a class="uk-navbar-item uk-logo" href="/">e-magik | shop</a>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-navbar-nav">
+            <li>
+              <a href="/">Inicio</a>
+            </li>
+            <li class="uk-active">
+              <a href="/productos">Productos</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="main">
+    <div class="uk-container uk-align-center">
+      <h2 class="uk-margin-top">
+        {{title}}
+        <a class="uk-button-altern uk-button-warning" href="/">+Agregar</a>
+      </h2>
+
+      <div class="uk-overflow-auto">
+        {{#if productos.length}}
+          <table class="uk-table uk-table-striped">
+            <thead>
+              <tr>
+                <th>
+                  <span class="uk-align-left">ID</span>
+                </th>
+                <th>
+                  <span class="uk-align-left">Title</span>
+                </th>
+                <th>
+                  <span class="uk-align-left">Thumbnail</span>
+                </th>
+                <th>
+                  <span class="uk-align-right">Price</span>
+                </th>
+                <th>
+                  <span class="uk-align-right">Actions</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+            {{#each productos as |field|}}
+              <tr>
+                <td>
+                  <span class="uk-align-left">{{field.id}}</span>
+                </td>
+                <td>
+                  <span class="uk-align-left">{{field.title}}</span>
+                </td>
+                <td>
+                  <span class="uk-align-left">{{field.thumbnail}}</span>
+                </td>
+                <td>
+                  <span class="uk-align-right">$ {{field.price}}</span>
+                </td>
+                <td>
+                  <a class="uk-align-right" href="/delete/{{field.id}}"><span uk-icon="trash"></span></a>
+                  <a class="uk-align-right" href="/form-edit/{{field.id}}"><span uk-icon="pencil"></span></a>
+
+                </td>
+              </tr>
+            {{/each}}
+            </tbody>
+          </table>
+        </div>
+        {{> cards }}
+        {{else}}
+          
+            <p>No hay productos</p>
+          
+        {{/if}}
+      </div>
+    </div>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/js/uikit-icons.min.js"></script>
+</body>
+</html>

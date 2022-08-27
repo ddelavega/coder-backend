@@ -1,0 +1,34 @@
+<div class="uk-card uk-card-default">
+  <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-small uk-grid-match uk-align-center" uk-grid>            
+      <div class="uk-inline uk-padding-small">
+        <div class="uk-card uk-card-default">
+          <div class="uk-card-media-top">
+            <img src={{product.thumbnail}}>
+            <div class="uk-card-body">
+              <h3 class="uk-card-title">{{product.title}}</h3>
+              <p>${{product.price}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <form action="/edit/{{product.id}}" method="POST" name="product">
+    <fieldset class="uk-fieldset uk-padding-small">
+      <label for="title">
+        <span>Title</span>
+        <input class="uk-input" type="text" placeholder="Title" value={{product.title}} name="title" required>
+      </label>
+      <label for="price">
+        <span>Price</span>
+        <input class="uk-input" type="number" placeholder="Price" value={{product.price}} name="price" required>
+      </label>
+      <label for="thumbnail">
+        <span>Tumbnail</span>
+        <input class="uk-input" type="text" placeholder="Thumbnail" value={{product.thumbnail}} name="thumbnail" required>
+      </label>
+      <button class="uk-margin uk-button-altern" type="submit">Guardar</button>
+    </fieldset>
+  </form>
+</div>
